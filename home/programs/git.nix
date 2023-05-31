@@ -39,11 +39,6 @@
 
     ignores = ["*~" "*.swp" "*result*" ".direnv" "node_modules"];
 
-    signing = {
-      key = "5899325F2F120900";
-      signByDefault = true;
-    };
-
     userEmail = "klementievd@proton.me";
     userName = "Klementiev Dmitry";
   };
