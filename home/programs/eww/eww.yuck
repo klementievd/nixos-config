@@ -1,28 +1,42 @@
 (defvar home_dir "/home/$USER/.config/eww/Scripts")
 
-(defpoll clipboard_content :interval "1s"
-        `/home/$USER/.config/eww/Scripts/clipboard_manager.py`)
-
 (defpoll time :interval "20s"
 	`date +" %a %b %d %I:%M %p"`)
-
-(defpoll battery :interval "30s"
-	`/home/$USER/.config/eww/Scripts/battery.py`)
-
-(defpoll volume :interval "1s"
-        `/home/$USER/.config/eww/Scripts/volume.py`)
-
-(defpoll wifi :interval "3s"
-        `/home/$USER/.config/eww/Scripts/wifi.py`)
 
 (deflisten workspaces :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
 	`/home/$USER/.config/eww/Scripts/workspaces.py`)
 
-(deflisten music :initial "Play music to begin"
+(deflisten music
            `/home/$USER/.config/eww/Scripts/music.sh`)
 
 (defvar music_reveal false)
 
+(defwidget music-module []
+  (eventbox
+    :onhover "${EWW_CMD} update music_reveal=true"
+    :onhoverlost "${EWW_CMD} update music_reveal=false"
+    (box
+      :class "music-module"
+      :space-evenly false
+      (box
+        :class "song-cover-art"
+        :style "background-image: url(\"${music.cover}\");")
+      (box
+        :class "music-title"
+        {music.title})
+      (revealer
+        :transition "slideright"
+        :reveal music_reveal
+        :duration "350ms"
+        (box
+          :class "icon text"
+          (button :class "song-button" :onclick "playerctl previous" "")
+          (button :class "song-button" :onclick "playerctl play-pause" {music.status})
+          (button :class "song-button" :onclick "playerctl next" ""))))))
+
+(defwidget tray []
+   (box :class "date"
+     {time}))
 
 (defwindow bar
 	:monitor 0
@@ -41,36 +55,9 @@
 	)
 
 	(box :class "music" :halign "center" :spacing 10 :space-evenly false
-         (box
-            :class "song-cover-art"
-            :style "background-image: url(\"${music.cover}\")")
-          (button
-            :class "module-text"
-            {music.title})
-          (revealer
-            :transition "slideright"
-            :reveal music_reveal
-            :duration "350ms"
-            (box
-                :class "icon text"
-                (button :class "song-button" :onclick "playerctl previous" "")
-                (button :class "song-button" :onclick "playerctl play-pause" {music.status})
-                (button :class "song-button" :onclick "playerctl next" ""))))
+        (music-module))
 
-	(button :class "time_battery" :onclick "${home_dir}/toggle_clipboard_manager.py" :halign "end" "${wifi} ${volume} ${battery} ${time}"
-	)
-
+    (box :class "tray" :halign "end"
+         (tray))
 	)
 )
-
-(defwindow clipboard_manager
-  :monitor 0
-  :windowtype "normal"
-  :geometry (geometry
-              :y "-3px"
-              :x "83%"
-              :width "17%"
-              )
-  
-    (literal :content "${clipboard_content}" )
-  )

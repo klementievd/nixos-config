@@ -28,86 +28,30 @@ $best_so_far: rgba(255,255,255,0.1);
 	padding: 5px 15px 5px 14px;
 	margin-bottom: 10px; 
 	font-size: 16px;
-	min-width: 230px;
 }
 
-.music_icon {
-    font-size:20px;
-    margin-top: 1px;
-    margin-left:2px;
+.song-cover-art {
+  background-position: center;
+  background-size: cover;
+  margin: 4px 5px 4px 0;
+  min-height: 24px;
+  min-width: 24px;
 }
 
-.music_icon_butt{
-    padding:0px;
-    background:transparent;
-    color: $fg;
-    border:none;
-    margin:0;
-    box-shadow:none;
-    font-style: normal;
-    text-shadow: none;
+.music-module {
+    background: $bg;
 }
 
-.music_icon_butt:hover{
-    background: rgba(#ffffff,0.1);
-    color:rgba(#000000,0.5);;
+.song-button {
+    background: $bg;
 }
 
-.music_text{
-    margin-top:2px;
-
-}
-
-.time_battery {
+.tray {
 	background: $bg;
 	border-radius: 0px 0px 0px 10px;
 	color: $fg;
 	font-size: 16px;
-	padding: 5px 15px 5px 14px; 
+	padding: 5px 5px 5px 5px;
 	margin-bottom: 10px;
 	text-shadow: none;
 }
-
-.time_battery:hover {
-    background: rgba(#ffffff,0.15);
-}
-
-.clipboard_manager{
-    background: transparent;
-}
-
-.clipboard_container{
-    margin-right:10px;
-}
-
-.clipboard-item{
-    background: rgba(#cccccc,0.9);
-    color: black;
-    text-shadow: none;
-    border: 1px solid $border_col;
-    border-radius: 7px;
-}
-
-.clipboard-item:hover{
-    background:  rgba(#eeeeee,0.9);
-}
-
-.playlist_selector{
-    background: rgba(#cccccc,0.9);
-    border-radius: 10px;
-}
-
-.playlist_button{
-    background: transparent;
-    color: black;
-    text-shadow: none;
-    border: none;
-    border-bottom: 1px solid gray ;
-    box-shadow: none;
-    border-radius: 10px;
-}
-
-.playlist_button:hover{
-    background: rgba(#eeeeee,0.8);
-}
-
