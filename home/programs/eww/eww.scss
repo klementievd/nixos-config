@@ -1,57 +1,7 @@
-$bg: rgba(#2111,1.0);
-$fg: #dddddd;
-$border_col: rgba(#cccccc,0.18);
-$best_so_far: rgba(255,255,255,0.1); 
-
-.bar {
-	background-color: transparent;
-}
-
-.main-container {
-	margin: 0px 0px 0px 0px;
-}
-
-.workspaces {
-	background-color: $bg;
-	border-radius: 0px 0px 10px 0px;
-	color: $fg;	
-	margin-bottom: 10px;
-	padding: 6px 20px 4px 20px;
-       	font-size: 18px;
-	min-height: 25px;
-}
-
-.music {
-	background-color: $bg;
-	border-radius: 0px 0px 10px 10px;
-	color: $fg;
-	padding: 5px 15px 5px 14px;
-	margin-bottom: 10px; 
-	font-size: 16px;
-}
-
-.song-cover-art {
+.applications-button {
   background-position: center;
   background-size: cover;
-  margin: 4px 5px 4px 0;
-  min-height: 24px;
-  min-width: 24px;
-}
-
-.music-module {
-    background: $bg;
-}
-
-.song-button {
-    background: $bg;
-}
-
-.tray {
-	background: $bg;
-	border-radius: 0px 0px 0px 10px;
-	color: $fg;
-	font-size: 16px;
-	padding: 5px 5px 5px 5px;
-	margin-bottom: 10px;
-	text-shadow: none;
+  margin: 4px 5px 4px 0px;
+  min-width: 40px;
+  min-height: 40px;
 }

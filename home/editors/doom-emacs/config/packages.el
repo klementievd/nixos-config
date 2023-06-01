@@ -48,3 +48,10 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+;;; Code:
+
+(package! yuck-mode)
+(add-to-list 'auto-mode-alist '("\\.yuck\\'" . yuck-mode))
+
+;;; packages.el ends here

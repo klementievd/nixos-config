@@ -1,63 +1,17 @@
-(defvar home_dir "/home/$USER/.config/eww/Scripts")
 
-(defpoll time :interval "20s"
-	`date +" %a %b %d %I:%M %p"`)
+(defwidget applications []
+  (box :class "appliacations"
+       :halign "center"
+    (button :class "applications-button" :style ":background-image: url('./tux.svg.png');")
+    (button :class "applications-button" :style ":background-image: url('./search.svg');")))
 
-(deflisten workspaces :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
-	`/home/$USER/.config/eww/Scripts/workspaces.py`)
-
-(deflisten music
-           `/home/$USER/.config/eww/Scripts/music.sh`)
-
-(defvar music_reveal false)
-
-(defwidget music-module []
-  (eventbox
-    :onhover "${EWW_CMD} update music_reveal=true"
-    :onhoverlost "${EWW_CMD} update music_reveal=false"
-    (box
-      :class "music-module"
-      :space-evenly false
-      (box
-        :class "song-cover-art"
-        :style "background-image: url(\"${music.cover}\");")
-      (box
-        :class "music-title"
-        {music.title})
-      (revealer
-        :transition "slideright"
-        :reveal music_reveal
-        :duration "350ms"
-        (box
-          :class "icon text"
-          (button :class "song-button" :onclick "playerctl previous" "")
-          (button :class "song-button" :onclick "playerctl play-pause" {music.status})
-          (button :class "song-button" :onclick "playerctl next" ""))))))
-
-(defwidget tray []
-   (box :class "date"
-     {time}))
-
-(defwindow bar
-	:monitor 0
-	:windowtype "dock"
-	:geometry (geometry 
-			:width "100%"
-			:height "4%"
-			:anchor "top center"
-			)
-	:exclusive true	
-
-	(box :class "main-container"
-	
-	(box :class "workspaces" :halign "start" 
-	(literal :content "${workspaces}")
-	)
-
-	(box :class "music" :halign "center" :spacing 10 :space-evenly false
-        (music-module))
-
-    (box :class "tray" :halign "end"
-         (tray))
-	)
-)
+(defwindow taskspanel
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0px"
+                      :width "100%"
+                      :height "50px"
+                      :anchor "bottom center")
+  :stacking "fg"
+  :exclusive true
+  (applications))
