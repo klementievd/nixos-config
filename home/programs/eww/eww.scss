@@ -7,12 +7,47 @@
 }
 
 .applications-button:active {
-  font-size: 28px;
+  //font-size: 28px;
   color: lightgray;
   transition: 0.05s;
 }
 
 .datetime {
-  margin: 0px 8px 0px 0px;
-  font-size: 18px;
+  margin-right: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  background: transparent;
+}
+
+.datetime:active {
+  color: lightgray;
+  transition: 0.05s;
+}
+
+// Search App CSS
+.search-bar {
+  color: #88c0d0;
+  font-size: 1.5rem;
+  margin: -2px;
+  padding: 30px 90px 30px 90px;
+  background-color: #1E222A;
+  border: 6px solid #80A0C0;
+}
+
+.search-bar-input {
+  color: #88c0d0;
+}
+
+.search-label {
+  font-family: "Iosevka";
+  font-size: 2rem;
+  font-weight: 700;
+  padding-right: 20px;
+}
+
+.finded-apps {
+  margin: -2px;
+  font-size: 1.25rem;
+  padding: 30px;
+  color: #88c0d0;
 }

@@ -1,5 +1,8 @@
 (defpoll datetime :interval "20s"
-  `date +"%a | %d.%m.%y | %H:%M"`)
+  `date +"%H:%M"`)
+
+(defpoll search_listen :interval "1s"
+  "cat ~/.config/eww/scripts/search_items.txt")
 
 (defwidget whatisit []
   (box :class ""
@@ -10,13 +13,16 @@
   (box :class "appliacations"
        :halign "center"
     (button :class "applications-button"
+            :onclick "eww open tux"
      "")
     (button :class "applications-button"
+            :onclick "eww open search"
      "")
     (button :class "applications-button"
             :onclick "firefox &"
      "")
     (button :class "applications-button"
+            :onclick "dolphin &"
      "")
     (button :class "applications-button"
             :onclick "chromium &"
@@ -28,7 +34,7 @@
 (defwidget tray []
   (box :class "tray"
        :halign "end"
-    (box :class "datetime"
+    (button :class "datetime"
       {datetime})))
 
 (defwidget taskspanel_layout []
@@ -47,3 +53,33 @@
   :stacking "fg"
   :exclusive true
   (taskspanel_layout))
+
+(defwidget search_layout []
+  (eventbox :onhoverlost "eww close search"
+    (box :class "search"
+         :orientation "h"
+         :space-evenly false
+         :halign "top"
+         :valign "top"
+      (box :class "search-bar"
+           :orientation "v"
+           :space-evenly false
+           :halign "top"
+           :valign "top"
+        (label :class "search-label" :text "")
+        (input :class "search-bar-input" :onchange "$XDG_CONFIG_HOME/eww/search.sh {}"))
+      (literal :class "finded-apps"
+               :halign "center"
+               :valign "center"
+               :content search_listen))))
+
+(defwindow search
+  :monitor 0
+  :wm-ignore true
+  :windowtype "normal"
+  :geometry (geometry :x "40%"
+                      :y "30%"
+                      :width "20%"
+                      :height "50%"
+                      :anchor "top left")
+  (search_layout))
