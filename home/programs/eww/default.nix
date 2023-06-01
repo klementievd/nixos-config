@@ -100,7 +100,7 @@ in {
         else "";
     };
 
-    # colors file
+    # topbar colors file
     xdg.configFile."eww/css/_colors.scss".text =
       if cfg.colors != null
       then cfg.colors
