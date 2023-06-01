@@ -1,95 +1,121 @@
-@import 'css/colors';
-
-@mixin rounding {
-  border-radius: 16px;
-}
-
-@mixin window {
-  border: 1px solid rgba(0,0,0,0.3);
-  margin: 5px 5px 10px;
-  @include rounding;
-}
-
-* {
-  all: unset;
-  font-family: "Jost *", Roboto, sans-serif;
-  transition: 200ms ease;
-}
-
-@import 'css/calendar';
-@import 'css/indicators';
-@import 'css/music';
-@import 'css/osd';
-@import 'css/sidebar';
-@import 'css/system';
-@import 'css/volume';
+$bg: rgba(#ffffff,0.1);
+$fg: #dddddd;
+$shadow: rgba(#000000,0.3);
+$border_col: rgba(#cccccc,0.18);
+$best_so_far: rgba(255,255,255,0.1); 
 
 .bar {
-  background-color: $bg;
-  color: $fg;
-
-  label {
-    font-size: 1.2rem;
-  }
+	background-color: transparent;	
 }
 
-tooltip {
-  background: $bg;
-  border: 1px solid $border;
-  border-radius: 8px;
-
-  label {
-    font-size: 1rem;
-  }
+.main-container {
+	margin: 8px 12px 0px 12px;
 }
 
-.text,
-.text label, { text-shadow: 0 0 .3rem $base; }
-
-.icon,
-.icon label { font-family: Material Symbols Outlined; }
-
-.ws {
-  border-radius: 2rem;
-  margin: .7rem .25rem;
+.workspaces {
+	background-color: $bg;
+	border-radius: 10px;
+	color: $fg;	
+	margin-bottom: 10px;
+	border: 1px solid $border_col;
+	padding: 6px 20px 4px 20px;
+       	font-size: 22px;
+	box-shadow: 2px 2px 2px $shadow;
+	min-height: 25px;	
 }
 
-.focused {
-  background-color: $bg;
-  border-radius: 1rem;
-  margin: .3rem;
-  padding: .25rem;
+.music {
+	background-color: $bg;
+	border-radius: 10px;
+	color: $fg;
+	border: 1px solid $border_col;
+	padding: 5px 15px 5px 14px;
+	margin-bottom: 10px; 
+	font-size: 16px;
+	box-shadow: 2px 2px 2px $shadow;
+	min-width: 230px;
 }
 
-.module { margin: 0 5px; }
-
-.hour {
-  font-weight: bold;
-  padding-left: 5px;
+.music_icon {
+    font-size:20px;
+    margin-top: 1px;
+    margin-left:2px;
 }
 
-.minute {
-  padding-right: .7rem;
+.music_icon_butt{
+    padding:0px;
+    background:transparent;
+    color: $fg;
+    border:none;
+    margin:0;
+    box-shadow:none;
+    font-style: normal;
+    text-shadow: none;
 }
 
-.date {
-  background: $bg;
-  color: $flamingo;
-
-  label {
-    font-size: 1.2rem;
-  }
+.music_icon_butt:hover{
+    background: rgba(#ffffff,0.1);
+    color:rgba(#000000,0.5);;
 }
 
-.bright-icon { color: $yellow; }
-.module-bt { font-size: 1.2rem; }
+.music_text{
+    margin-top:2px;
 
-scale trough {
-  background-color: $bg1;
-  border-radius: 24px;
-  margin: 0 1rem;
-  min-height: 10px;
-  min-width: 70px;
 }
 
-.workspaces { margin-left: 10px; }
+.time_battery {
+	background: $bg;
+	border-radius: 10px;
+	color: $fg;
+	font-size: 16px;
+	padding: 5px 15px 5px 14px; 
+	margin-bottom: 10px;
+	border: 1px solid $border_col;
+	box-shadow: 2px 2px 2px $shadow;
+	text-shadow: none;
+}
+
+.time_battery:hover {
+    background: rgba(#ffffff,0.15);
+}
+
+.clipboard_manager{
+    background: transparent;
+}
+
+.clipboard_container{
+    margin-right:10px;
+}
+
+.clipboard-item{
+    background: rgba(#cccccc,0.9);
+    color: black;
+    text-shadow: none;
+    border: 1px solid $border_col;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px $shadow;
+}
+
+.clipboard-item:hover{
+    background:  rgba(#eeeeee,0.9);
+}
+
+.playlist_selector{
+    background: rgba(#cccccc,0.9);
+    border-radius: 10px;
+}
+
+.playlist_button{
+    background: transparent;
+    color: black;
+    text-shadow: none;
+    border: none;
+    border-bottom: 1px solid gray ;
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+.playlist_button:hover{
+    background: rgba(#eeeeee,0.8);
+}
+
