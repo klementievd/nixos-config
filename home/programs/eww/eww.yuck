@@ -1,9 +1,41 @@
+(defpoll datetime :interval "20s"
+  `date +"%a | %d.%m.%y | %H:%M"`)
+
+(defwidget whatisit []
+  (box :class ""
+       :halign "start"
+   "TODO"))
 
 (defwidget applications []
   (box :class "appliacations"
        :halign "center"
-    (button :class "applications-button" :style ":background-image: url('./tux.svg.png');")
-    (button :class "applications-button" :style ":background-image: url('./search.svg');")))
+    (button :class "applications-button"
+     "")
+    (button :class "applications-button"
+     "")
+    (button :class "applications-button"
+            :onclick "firefox &"
+     "")
+    (button :class "applications-button"
+     "")
+    (button :class "applications-button"
+            :onclick "chromium &"
+     "")
+    (button :class "applications-button"
+            :onclick "emacsclient -c &"
+     "")))
+
+(defwidget tray []
+  (box :class "tray"
+       :halign "end"
+    (box :class "datetime"
+      {datetime})))
+
+(defwidget taskspanel_layout []
+  (box :class "tasks panel"
+    (whatisit)
+    (applications)
+    (tray)))
 
 (defwindow taskspanel
   :monitor 0
@@ -14,4 +46,4 @@
                       :anchor "bottom center")
   :stacking "fg"
   :exclusive true
-  (applications))
+  (taskspanel_layout))

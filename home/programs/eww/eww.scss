@@ -1,7 +1,18 @@
 .applications-button {
-  background-position: center;
-  background-size: cover;
+  background: transparent;
+  font-size: 30px;
   margin: 4px 5px 4px 0px;
   min-width: 40px;
   min-height: 40px;
+}
+
+.applications-button:active {
+  font-size: 28px;
+  color: lightgray;
+  transition: 0.05s;
+}
+
+.datetime {
+  margin: 0px 8px 0px 0px;
+  font-size: 18px;
 }
