@@ -25,24 +25,26 @@
 }
 
 // Search App CSS
+.search-bar-icon {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
 .search-bar {
-  color: #88c0d0;
-  font-size: 1.5rem;
-  margin: -2px;
-  padding: 30px 90px 30px 90px;
-  background-color: #1E222A;
-  border: 6px solid #80A0C0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+  background: transparent;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-radius: 0px 20px 20px 0px;
 }
 
 .search-bar-input {
   color: #88c0d0;
-}
-
-.search-label {
-  font-family: "Iosevka";
-  font-size: 2rem;
-  font-weight: 700;
-  padding-right: 20px;
+  border-left: 2px solid white;
+  border-radius: 0px 20px 20px 0px;
 }
 
 .finded-apps {
@@ -50,4 +52,11 @@
   font-size: 1.25rem;
   padding: 30px;
   color: #88c0d0;
+}
+
+.workspaces {
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 20px;
+	min-height: 25px;
 }

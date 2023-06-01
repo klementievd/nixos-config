@@ -1,13 +1,17 @@
 (defpoll datetime :interval "20s"
   `date +"%H:%M"`)
 
-(defpoll search_listen :interval "1s"
-  "cat ~/.config/eww/scripts/search_items.txt")
+(deflisten workspaces_listen :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
+	`$XDG_CONFIG_HOME/eww/scripts/workspaces.py`)
 
-(defwidget whatisit []
-  (box :class ""
+(defwidget workspaces []
+  (box :class "workspaces"
+    (literal :content "${workspaces_listen}")))
+
+(defwidget taskspanel_left []
+  (box :class "taskspanel_left"
        :halign "start"
-   "TODO"))
+    (workspaces)))
 
 (defwidget applications []
   (box :class "appliacations"
@@ -39,7 +43,7 @@
 
 (defwidget taskspanel_layout []
   (box :class "tasks panel"
-    (whatisit)
+    (taskspanel_left)
     (applications)
     (tray)))
 
@@ -53,33 +57,3 @@
   :stacking "fg"
   :exclusive true
   (taskspanel_layout))
-
-(defwidget search_layout []
-  (eventbox :onhoverlost "eww close search"
-    (box :class "search"
-         :orientation "h"
-         :space-evenly false
-         :halign "top"
-         :valign "top"
-      (box :class "search-bar"
-           :orientation "v"
-           :space-evenly false
-           :halign "top"
-           :valign "top"
-        (label :class "search-label" :text "")
-        (input :class "search-bar-input" :onchange "$XDG_CONFIG_HOME/eww/search.sh {}"))
-      (literal :class "finded-apps"
-               :halign "center"
-               :valign "center"
-               :content search_listen))))
-
-(defwindow search
-  :monitor 0
-  :wm-ignore true
-  :windowtype "normal"
-  :geometry (geometry :x "40%"
-                      :y "30%"
-                      :width "20%"
-                      :height "50%"
-                      :anchor "top left")
-  (search_layout))
