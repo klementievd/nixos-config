@@ -2,7 +2,7 @@
   `date +"%H:%M"`)
 
 (deflisten workspaces_listen :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
-	`$XDG_CONFIG_HOME/eww/scripts/workspaces.py`)
+	`/home/$USER/.config/eww/scripts/workspaces.py`)
 
 (defwidget workspaces []
   (box :class "workspaces"
