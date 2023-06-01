@@ -19,7 +19,7 @@ in {
     # set cursor for HL itself
     exec-once = hyprctl setcursor ${pointer.name} ${toString pointer.size}
     exec-once = systemctl --user start clight
-    exec-once = eww open bar
+    exec-once = eww -c $HOME/.config/eww/topbar open-many topbar
     misc {
       # disable auto polling for config file changes
       disable_autoreload = true

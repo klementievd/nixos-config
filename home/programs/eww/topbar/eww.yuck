@@ -44,7 +44,7 @@
     (center)
     (right)))
 
-(defwindow bar
+(defwindow topbar
     :monitor 0
     :geometry (geometry :x "0%"
       :y "0%"
