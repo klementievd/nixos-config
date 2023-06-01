@@ -68,7 +68,6 @@ in {
     colors = lib.mkOption {
       type = with lib.types; nullOr lines;
       default = null;
-      defaultText = lib.literalExpression "null";
       description = ''
         SCSS file with colors defined in the same way as Catppuccin colors are,
         to be used by eww.
@@ -109,7 +108,7 @@ in {
       };
       Service = {
         Environment = "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}";
-        ExecStart = "${cfg.package}/bin/eww daemon --no-daemonize";
+        ExecStart = "${cfg.package}/bin/eww daemon";
         Restart = "on-failure";
       };
       Install.WantedBy = ["graphical-session.target"];

@@ -18,8 +18,10 @@
 (deflisten workspaces :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
 	`/home/$USER/.config/eww/Scripts/workspaces.py`)
 
-(deflisten song_status :initial "Select playlist to begin"
-        `/home/$USER/.config/eww/Scripts/song_status.py`)
+(deflisten music :initial "Play music to begin"
+           `/home/$USER/.config/eww/Scripts/music.sh`)
+
+(defvar music_reveal false)
 
 
 (defwindow bar
@@ -38,11 +40,22 @@
 	(literal :content "${workspaces}")
 	)
 
-	(box :class "music" :halign "center" :spacing 10 :space-evenly false  
-        	
-        (literal :content "(box :class \"music_icon\" (button :class \"music_icon_butt\" :onclick \"${home_dir}/toggle_playlist_selector.py\" \"󰲸\" ))")
-	(literal :halign "center" :content "(box :class \"music_text\" (label :text \"${song_status}\" ))")
-        )
+	(box :class "music" :halign "center" :spacing 10 :space-evenly false
+         (box
+            :class "song-cover-art"
+            :style "background-image: url(\"${music.cover}\")")
+          (button
+            :class "module-text"
+            {music.title})
+          (revealer
+            :transition "slideright"
+            :reveal music_reveal
+            :duration "350ms"
+            (box
+                :class "icon text"
+                (button :class "song-button" :onclick "playerctl previous" "")
+                (button :class "song-button" :onclick "playerctl play-pause" {music.status})
+                (button :class "song-button" :onclick "playerctl next" ""))))
 
 	(button :class "time_battery" :onclick "${home_dir}/toggle_clipboard_manager.py" :halign "end" "${wifi} ${volume} ${battery} ${time}"
 	)
@@ -60,21 +73,4 @@
               )
   
     (literal :content "${clipboard_content}" )
-  )
-
-
-(defwindow playlist_selector
-  :monitor 0
-  :windowtype "normal"
-  :geometry (geometry
-              :y "-4px"
-              :width "16%"
-              :anchor "top center"
-              )
-  (box :orientation "vertical"
-    (button :class "playlist_button" :onclick "${home_dir}/playlist_selector.py modern" "Modern")
-    (button :class "playlist_button" :onclick "${home_dir}/playlist_selector.py electronic" "Electronic") 
-    (button :class "playlist_button" :onclick "${home_dir}/playlist_selector.py classic" "Classic") 
-    (button :class "playlist_button" :onclick "${home_dir}/playlist_selector.py soundtracks" "Soundtracks")
-    )
   )

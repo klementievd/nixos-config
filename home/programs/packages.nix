@@ -23,5 +23,8 @@
     # productivity
     obsidian
     xournalpp
+
+    # other
+    python39
   ];
 }

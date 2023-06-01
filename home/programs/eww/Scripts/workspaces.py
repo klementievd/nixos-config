@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import subprocess
 import os
@@ -29,4 +29,5 @@ while True:
         if "workspace>>" == item[0:11]:
             workspaces_num = item[-1]
 
-            update_workspace(int(workspaces_num))
+            if int(workspaces_num) < 6:
+                update_workspace(int(workspaces_num))

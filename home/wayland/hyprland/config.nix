@@ -200,7 +200,7 @@ in {
           bind = $mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}
         ''
       )
-      10)}
+      5)}
     # special workspace
     bind = $mod SHIFT, grave, movetoworkspace, special
     bind = $mod, grave, togglespecialworkspace, eDP-1
