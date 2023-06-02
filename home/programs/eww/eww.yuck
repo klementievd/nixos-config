@@ -4,6 +4,23 @@
 (deflisten workspaces_listen :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
 	`/home/$USER/.config/eww/scripts/workspaces.py`)
 
+(deflisten battery_listen "scripts/battery.sh")
+
+(defwidget battery []
+  (box :class "battery-box"
+       :space-evenly false
+       :halign "start"
+    (label
+     :class "battery-icon icon"
+     :style "color: ${battery.color}"
+     :text {battery.icon})
+    (label
+     :class "battery-status text"
+     :text {battery.status})
+    (label
+     :class "battery-wattage text"
+     :text {battery.status != "Fully Charged" ? battery.wattage : ""})))
+
 (defwidget workspaces []
   (box :class "workspaces"
     (literal :content "${workspaces_listen}")))
@@ -38,11 +55,12 @@
 (defwidget tray []
   (box :class "tray"
        :halign "end"
+    (battery)
     (button :class "datetime"
       {datetime})))
 
 (defwidget taskspanel_layout []
-  (box :class "tasks panel"
+  (box :class "taskspanel"
     (taskspanel_left)
     (applications)
     (tray)))

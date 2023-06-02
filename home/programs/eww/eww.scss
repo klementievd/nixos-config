@@ -1,3 +1,11 @@
+* {
+  all: unset;
+}
+
+.taskspanel {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .applications-button {
   background: transparent;
   font-size: 30px;
@@ -55,7 +63,7 @@
 }
 
 .workspaces {
-  margin-top: 15px;
+  margin-top: 1rem;
   margin-left: 20px;
   font-size: 20px;
 	min-height: 25px;
