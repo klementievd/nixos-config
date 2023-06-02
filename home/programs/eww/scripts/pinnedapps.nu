@@ -5,7 +5,7 @@ mut output = ""
 let apps = (open ~/.config/eww/config.toml | get taskspanel-pinned-apps | values)
 
 for $application in $apps {
-    $output += $"\(button :class \"applications-button\" :onclick \"($application | get cmd)\" \"($application | get icon)\"\)\n"
+    $output += $"\(button :class \"applications-button\" :onclick \"($application | get cmd)\" \"($application | get icon)\"\)"
 }
 
-echo $output
+bash -c $"echo '\(box ($output)\)'"
