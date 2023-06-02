@@ -25,8 +25,9 @@
     obsidian
     xournalpp
 
-    # file management
+    # disks/file management
     gnome.nautilus
+    gparted
 
     # other
     python39
