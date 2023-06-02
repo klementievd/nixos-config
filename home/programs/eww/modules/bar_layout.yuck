@@ -1,5 +1,9 @@
-(defpoll datetime :interval "20s"
+(defpoll time :interval "20s"
   `date +"%H:%M"`)
+(defpoll date :interval "20s"
+  `date +"%d/%m/%y"`)
+(defvar date_reveal false)
+(defvar calendar_hover false)
 
 (deflisten workspaces_listen :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
 	`scripts/workspaces.py`)
@@ -48,8 +52,25 @@
        :space-evenly false
     (battery)
     (tray-separator)
-    (button :class "datetime"
-      {datetime})))
+    (eventbox
+     :onhover "eww update date_reveal=true"
+     :onhoverlost "eww update date_reveal=false"
+     (box
+      :class "datetime"
+      :space-evenly false
+      (revealer
+       :transition "slideleft"
+       :reveal date_reveal
+       :duration "300ms"
+       (eventbox
+        :onhover "eww update calendar_hover=false; eww open calendar"
+        :onhoverlost "zsh -c 'sleep 0.1s; [ $(eww get calendar_hover) = false ] && eww close calendar' &"
+        (box
+         :class "date"
+         {date})))
+      (box
+       :class "time"
+       {time})))))
 
 (defwidget bar_layout []
   (box :class "bar"

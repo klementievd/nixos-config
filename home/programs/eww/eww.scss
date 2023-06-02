@@ -46,6 +46,10 @@
   background: transparent;
 }
 
+.date {
+  margin-right: 8px;
+}
+
 .datetime:active {
   color: lightgray;
   transition: 0.05s;
@@ -82,4 +86,35 @@
 
 .search-bar-input {
   border-bottom: 1px solid white;
+}
+
+.calendar-win {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: .2em;
+  border-radius: 10px;
+}
+
+calendar {
+  padding: 5px;
+
+  :selected {
+    color: #f1ff70;
+  }
+
+  .header {
+    color: #ffbcb8;
+  }
+
+  .highlight {
+    color: #65abcf;
+    font-weight: bold;
+  }
+
+  .button {
+    color: cyan;
+  }
+
+  :indeterminate {
+    color: #eeb8ff;
+  }
 }
