@@ -4,4 +4,4 @@ buf=""
 for l in $list ; do
   buf="$buf (button :class \"finded-item\" :onclick \"$l &\" \"$l\")"
 done
-echo "(box :orientation \"v\" :spacing 5 :class \"apps\" :halign \"center\" :valign \"center\" $buf)" > ~/.config/eww/scripts/search_items.txt
+echo "(box :orientation \"v\" :spacing 5 :class \"apps\" :halign \"center\" :valign \"center\" $buf)" > ~/.config/eww/scripts/finded_items.txt

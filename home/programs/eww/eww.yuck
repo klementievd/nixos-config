@@ -14,11 +14,11 @@
 
 (defwindow menu
   :monitor 0
-  :geometry (geometry :x "20%"
-                      :y "50%"
-                      :width "100px"
-                      :height "100px"
-                      :anchor "bottom center")
+  :geometry (geometry :x "40%"
+                      :y "30%"
+                      :width "40%"
+                      :height "50%"
+                      :anchor "center center")
   :stacking "fg"
   :focusable true
   (menu_layout))

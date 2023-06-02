@@ -6,16 +6,17 @@
   (box
    :class "search"
    :orientation "v"
-   :halign "top"
-   :valign "top"
+   :space-evenly false
    (box
     :class "search-bar"
     :space-evenly false
     :orientation "h"
-    :halign "top"
-    :valign "top"
-    (label :class "search-bar-icon" :text "")
-    (input :class "search-bar-input" :onchange "~/.config/eww/scripts/search.sh"))
+    :halign "center"
+    (label :class "search-bar-icon" :text "")
+    (input
+     :class "search-bar-input"
+     :onchange "~/.config/eww/scripts/search.sh {}"
+     :onaccept "{} &"))
    (literal
     :class "search-finded"
     :content search_listen)))
@@ -23,4 +24,4 @@
 (defwidget menu_layout []
   (box
    :class "menu"
-   (search))
+   (search)))

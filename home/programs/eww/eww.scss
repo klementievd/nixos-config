@@ -67,4 +67,19 @@
 
 .menu {
   background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  font-size: 15px;
+}
+
+.search-bar {
+  border-radius: 10px;
+}
+
+.search-bar-icon {
+  font-size: 30px;
+  margin-right: 8px;
+}
+
+.search-bar-input {
+  border-bottom: 1px solid white;
 }
