@@ -2,7 +2,7 @@
 
 # set -ex
 
-icons=("" "" "" "" "" "" "" "")
+icons=("󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
 num_icons=$(awk -v n="${#icons[@]}" 'BEGIN{print 100 / n}')
 
 geticon() {
@@ -31,11 +31,8 @@ gettime() {
 status() {
   str=""
 
-  if [ "$state" = "fully-charged" ]; then
-    str+="Fully Charged"
-  else
-    [ "$state" = "charging" ] && str+="charging, "
-    str+="$(gettime) left"
+  if [ "$state" = "charging" ]; then
+    str+="󱐋"
   fi
 
   echo "$str"

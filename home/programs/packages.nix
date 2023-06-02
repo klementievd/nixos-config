@@ -12,6 +12,7 @@
 
     # messaging
     tdesktop
+    discord
 
     # torrents
     transmission-remote-gtk
@@ -24,7 +25,12 @@
     obsidian
     xournalpp
 
+    # file management
+    gnome.nautilus
+
     # other
     python39
+    ripgrep
+    jc
   ];
 }
