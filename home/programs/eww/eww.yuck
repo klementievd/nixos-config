@@ -6,6 +6,13 @@
 
 (deflisten battery_listen "scripts/battery.sh")
 
+(deflisten pinned-applications_listen "scripts/pinnedapps.nu")
+
+(defwidget pinned-applications []
+  (box
+   :class "pinned-applications"
+   {pinned-applications_listen}))
+
 (defwidget battery []
   (box :class "battery-box"
        :space-evenly false

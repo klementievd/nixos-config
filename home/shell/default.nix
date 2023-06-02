@@ -9,6 +9,7 @@ in
   imports = [
     ./starship.nix
     ./zsh.nix
+    ./nushell.nix
   ];
 
   # add environment variables
@@ -22,7 +23,7 @@ in
     # enable scrolling in git diff
     DELTA_PAGER = "less -R";
 
-    EDITOR = "hx";
+    EDITOR = "emacsclient -c";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
   };
 }
