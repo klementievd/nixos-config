@@ -1,1 +1,26 @@
-(defwidget menu_layout [])
+(defpoll search_listen
+  :interval "1s"
+  "cat ~/.config/eww/scripts/finded_items.txt")
+
+(defwidget search []
+  (box
+   :class "search"
+   :orientation "v"
+   :halign "top"
+   :valign "top"
+   (box
+    :class "search-bar"
+    :space-evenly false
+    :orientation "h"
+    :halign "top"
+    :valign "top"
+    (label :class "search-bar-icon" :text "")
+    (input :class "search-bar-input" :onchange "~/.config/eww/scripts/search.sh"))
+   (literal
+    :class "search-finded"
+    :content search_listen)))
+
+(defwidget menu_layout []
+  (box
+   :class "menu"
+   (search))
