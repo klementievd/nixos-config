@@ -45,6 +45,9 @@
             :onclick "discord &"
      "󰙯")
     (button :class "applications-button"
+            :onclick "telegram-desktop &"
+     "")
+    (button :class "applications-button"
             :onclick "nautilus &"
      "")
     (button :class "applications-button"
