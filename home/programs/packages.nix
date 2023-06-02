@@ -27,7 +27,6 @@
 
     # disks/file management
     gnome.nautilus
-    gparted
 
     # other
     python39
