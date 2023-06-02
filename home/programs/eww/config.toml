@@ -1,4 +1,4 @@
-[taskspanel-pinned-apps]
+[bar-pinned-apps]
 firefox = { icon = "", cmd = "firefox &" }
 discord = { icon = "󰙯", cmd = "discord &" }
 telegram-desktop = { icon = "", cmd = "telegram-desktop &" }
