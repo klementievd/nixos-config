@@ -1,61 +1,5 @@
-(defpoll datetime :interval "20s"
-  `date +"%H:%M"`)
-
-(deflisten workspaces_listen :initial "(box (label :text \"󰄯  󰄰  󰄰  󰄰  󰄰\" ))"
-	`/home/$USER/.config/eww/scripts/workspaces.py`)
-
-(deflisten battery_listen "scripts/battery.sh")
-
-(deflisten pinned-applications_listen "scripts/pinnedapps.nu")
-
-(defwidget pinned-applications []
-  (box
-   :class "pinned-applications"
-   :halign "center"
-   (literal :content {pinned-applications_listen})))
-
-(defwidget battery []
-  (box :class "battery-box"
-       :space-evenly false
-    (label
-     :class "battery-icon icon"
-     :style "color: ${battery_listen.color}"
-     :text {battery_listen.icon})
-    (label
-     :class "battery-status text"
-     :text {battery_listen.status})
-    (label
-     :class "battery-wattage text"
-     :text {battery_listen.status != "Fully Charged" ? battery_listen.wattage : ""})))
-
-(defwidget workspaces []
-  (box :class "workspaces"
-    (literal :content "${workspaces_listen}")))
-
-(defwidget bar_left []
-  (box :class "bar_left"
-       :halign "start"
-    (workspaces)))
-
-(defwidget tray-separator []
-  (box
-   :class "tray-separator"
-   "│"))
-
-(defwidget tray []
-  (box :class "tray"
-       :halign "end"
-       :space-evenly false
-    (battery)
-    (tray-separator)
-    (button :class "datetime"
-      {datetime})))
-
-(defwidget bar_layout []
-  (box :class "bar"
-    (bar_left)
-    (pinned-applications)
-    (tray)))
+(include "modules/bar_layout.yuck")
+(include "modules/menu_layout.yuck")
 
 (defwindow bar
   :monitor 0
@@ -67,3 +11,14 @@
   :stacking "fg"
   :exclusive true
   (bar_layout))
+
+(defwindow menu
+  :monitor 0
+  :geometry (geometry :x "20%"
+                      :y "50%"
+                      :width "100px"
+                      :height "100px"
+                      :anchor "bottom center")
+  :stacking "fg"
+  :focusable true
+  (menu_layout))
