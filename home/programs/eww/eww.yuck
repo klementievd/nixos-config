@@ -11,6 +11,7 @@
 (defwidget pinned-applications []
   (box
    :class "pinned-applications"
+   :halign "center"
    {pinned-applications_listen}))
 
 (defwidget battery []
@@ -31,38 +32,10 @@
   (box :class "workspaces"
     (literal :content "${workspaces_listen}")))
 
-(defwidget taskspanel_left []
-  (box :class "taskspanel_left"
+(defwidget bar_left []
+  (box :class "bar_left"
        :halign "start"
     (workspaces)))
-
-(defwidget applications []
-  (box :class "appliacations"
-       :halign "center"
-    (button :class "applications-button"
-            :onclick "eww open tux"
-     "")
-    (button :class "applications-button"
-            :onclick "eww open search"
-     "")
-    (button :class "applications-button"
-            :onclick "firefox &"
-     "")
-    (button :class "applications-button"
-            :onclick "discord &"
-     "󰙯")
-    (button :class "applications-button"
-            :onclick "telegram-desktop &"
-     "")
-    (button :class "applications-button"
-            :onclick "nautilus &"
-     "")
-    (button :class "applications-button"
-            :onclick "chromium &"
-     "")
-    (button :class "applications-button"
-            :onclick "emacsclient -c &"
-     "")))
 
 (defwidget tray-separator []
   (box
@@ -78,13 +51,13 @@
     (button :class "datetime"
       {datetime})))
 
-(defwidget taskspanel_layout []
-  (box :class "taskspanel"
-    (taskspanel_left)
-    (applications)
+(defwidget bar_layout []
+  (box :class "bar"
+    (bar_left)
+    (pinned-applications)
     (tray)))
 
-(defwindow taskspanel
+(defwindow bar
   :monitor 0
   :geometry (geometry :x "0%"
                       :y "0px"
@@ -93,4 +66,4 @@
                       :anchor "bottom center")
   :stacking "fg"
   :exclusive true
-  (taskspanel_layout))
+  (bar_layout))

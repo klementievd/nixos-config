@@ -134,7 +134,8 @@ in {
     bind = $mod, M, exec, hyprctl keyword $kw $(($(hyprctl getoption $kw -j | jaq -r '.int') ^ 1))
     # utility
     # launcher
-    bindr = $mod, D, exec, pkill ${default.launcher} || $HOME/.config/rofi/rofi.sh drun
+    bindr = $mod, SUPER_L, exec, eww open --toggle menu
+    bind = $mod, Space, exec, # This is needed for Super(Win)+Space keyboard layout switching
     # terminal
     bind = $mod, Return, exec, ${default.terminal.name}
     # doom emacs
