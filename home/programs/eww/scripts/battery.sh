@@ -33,6 +33,8 @@ status() {
 
   if [ "$state" = "charging" ]; then
     str+="󱐋"
+  else
+    str+=" "
   fi
 
   echo "$str"
