@@ -1,3 +1,5 @@
+(include "sys.yuck")
+
 (defpoll time :interval "20s"
   `date +"%H:%M"`)
 (defpoll date :interval "20s"
@@ -52,6 +54,7 @@
   (box :class "tray"
        :halign "end"
        :space-evenly false
+    (sys)
     (battery)
     (tray-separator)
     (eventbox
