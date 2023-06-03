@@ -19,6 +19,8 @@
   programs = {
     chromium = {
       enable = true;
+      # Chromium without google services
+      package = pkgs.ungoogled-chromium;
       commandLineArgs = ["--enable-features=TouchpadOverscrollHistoryNavigation"];
       extensions = [
         {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";}
@@ -26,6 +28,7 @@
       ];
     };
 
+    # TODO: Use librewolf instead of firefox
     firefox = {
       enable = true;
       profiles.klementievd = {};
