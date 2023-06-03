@@ -4,6 +4,7 @@
   (box
    :class "network_info"
    :tooltip {net.name}
+   :style "color: ${net.color};"
    {net.icon}))
 
 (defwidget sys []

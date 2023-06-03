@@ -11,7 +11,7 @@ source "$(dirname "$0")"/utils.sh
 
 # get initialize network device info and states
 nm="$(nmcli d | jc --nmcli | jaq -r '.[] | select(.type | test("^(wifi|ethernet)$", "ix"))')"
-icons=("" "" "" "" "")
+icons=("󰤯" "󰤟" "󰤢" "󰤥" "󰤨")
 
 function toggle() {
   status=$(rfkill -J | jaq -r '.rfkilldevices[] | select(.type == "wlan") | .soft' | head -1)
@@ -37,7 +37,7 @@ function gen_wifi() {
 }
 
 function gen_ethernet() {
-  icon=""
+  icon="󰈁"
   class="net-connected"
   color="#cba6f7"
   name=$(echo "$nm" | jaq -r 'select(.type == "ethernet") .connection')
@@ -54,7 +54,7 @@ function make_content() {
   elif [[ $wifi == "connected" ]]; then
     gen_wifi
   else
-    icon=""
+    icon="󰈂"
     color="#988ba2"
     class="net-disconnected"
     name="Disconnected"

@@ -12,7 +12,8 @@
 }
 
 .battery-icon {
-  font-size: 30px;
+  font-size: 25px;
+  margin-left: 5px;
   margin-right: 3px;
 }
 
@@ -118,4 +119,9 @@ calendar {
   :indeterminate {
     color: #eeb8ff;
   }
+}
+
+.network_info {
+  margin-right: 15px;
+  font-size: 20px;
 }
