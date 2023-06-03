@@ -1,4 +1,4 @@
-(include "sys.yuck")
+(include "modules/sys.yuck")
 
 (defpoll time :interval "20s"
   `date +"%H:%M"`)

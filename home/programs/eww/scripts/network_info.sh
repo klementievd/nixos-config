@@ -7,7 +7,7 @@
 # Usage: networkmanager
 
 # shellcheck source=/dev/null
-source "$(dirname "$0")"/utils
+source "$(dirname "$0")"/utils.sh
 
 # get initialize network device info and states
 nm="$(nmcli d | jc --nmcli | jaq -r '.[] | select(.type | test("^(wifi|ethernet)$", "ix"))')"

@@ -10,4 +10,5 @@
   (network_info))
 
 (defwindow sys_win
-  :monitor 0)
+  :monitor 0
+  "TODO")
