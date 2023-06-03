@@ -13,6 +13,7 @@
     ./qt.nix
     ./xdg.nix
     ./zathura.nix
+    ./dconf.nix
   ];
 
   programs = {
