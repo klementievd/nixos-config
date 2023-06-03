@@ -48,7 +48,7 @@
   background: transparent;
 }
 
-.date {
+.date-container {
   margin-right: 8px;
 }
 
@@ -124,4 +124,9 @@ calendar {
 .network_info {
   margin-right: 15px;
   font-size: 20px;
+}
+
+.date:active {
+  color: lightgray;
+  transition: 0.05s;
 }

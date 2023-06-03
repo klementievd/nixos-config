@@ -68,10 +68,11 @@
        :reveal date_reveal
        :duration "300ms"
        (eventbox
-        :onhover "eww update calendar_hover=false; eww open calendar"
+        :class "date"
+        :onclick "eww update calendar_hover=false; eww open calendar"
         :onhoverlost "zsh -c 'sleep 0.1s; [ $(eww get calendar_hover) = false ] && eww close calendar' &"
         (box
-         :class "date"
+         :class "date-container"
          {date})))
       (box
        :class "time"
