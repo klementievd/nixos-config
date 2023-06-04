@@ -1,4 +1,6 @@
 (deflisten workspaces_listen "scripts/workspaces.py")
+(deflisten battery_listen "scripts/battery.sh")
+
 (defpoll hour_listen
   :interval "2s"
   "date +\"%H\"")

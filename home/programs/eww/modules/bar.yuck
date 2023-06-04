@@ -29,6 +29,19 @@
    :space-evenly false
    day_listen month_listen year_listen))
 
+(defwidget battery []
+  (box
+   :class "battery"
+   :orientation "v"
+   :valign "end"
+   :space-evenly false
+   (label
+    :class "battery-icon"
+    :text {battery_listen.icon})
+   (label
+    :class "battery-percentage"
+    :text {battery_listen.percentage})))
+
 (defwidget top_layout_1 []
   (box
    :class "top_layout_1"
