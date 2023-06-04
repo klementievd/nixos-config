@@ -1,4 +1,4 @@
-$bg: white;
+$bg: black;
 $fg: orange;
 
 * {
@@ -12,6 +12,10 @@ $fg: orange;
     border-radius: 15px;
 }
 
+.bar_separator_1 {
+    font-size: 20px;
+}
+
 .workspaces {
     margin-top: 10px;
     font-size: 18px;
@@ -21,7 +25,12 @@ $fg: orange;
     margin-top: 3px;
 }
 
-.time {
+.time,
+.date {
     font-size: 25px;
     font-family: 'Silkscreen';
+}
+
+.date {
+    margin-bottom: 10px;
 }

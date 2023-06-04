@@ -19,7 +19,7 @@
              :x "8px"
              :y "0%"
              :width "50px"
-             :height "99%"
+             :height "98%"
              :anchor "center right")
   :stacking "fg"
   :exclusive true

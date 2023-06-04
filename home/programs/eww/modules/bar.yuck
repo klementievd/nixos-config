@@ -1,3 +1,9 @@
+;; Basic widgets
+(defwidget bar_separator_1 []
+  (label
+   :class "bar_separator_1"
+   :text "${default_bar_separator_1}"))
+
 ;; Widgets for my bars
 
 (defwidget workspaces []
@@ -12,10 +18,16 @@
    :class "time"
    :orientation "v"
    :valign "center"
-   (literal
-    :content {hour_listen})
-   (literal
-    :content {minute_listen})))
+   :space-evenly false
+   hour_listen minute_listen))
+
+(defwidget date []
+  (box
+   :class "date"
+   :orientation "v"
+   :valign "center"
+   :space-evenly false
+   day_listen month_listen year_listen))
 
 (defwidget top_layout_1 []
   (box
@@ -36,4 +48,6 @@
    :class "center_layout_1"
    :orientation "v"
    :valign "end"
-   "TODO"))
+   :space-evenly false
+   (bar_separator_1)
+   (date)))

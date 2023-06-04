@@ -5,3 +5,14 @@
 (defpoll minute_listen
   :interval "2s"
   "date +\"%M\"")
+(defpoll day_listen
+  :interval "2s"
+  "date +\"%d\"")
+(defpoll month_listen
+  :interval "2s"
+  "date +\"%m\"")
+(defpoll year_listen
+  :interval "2s"
+  "date +\"%y\"")
+
+(defvar default_bar_separator_1 "╾╼╾╼")
