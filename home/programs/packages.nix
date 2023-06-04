@@ -25,6 +25,9 @@
     obsidian
     xournalpp
 
+    # office programs
+    okular # So cool PDF Viewer
+
     # disks/file management
     gnome.nautilus
 
