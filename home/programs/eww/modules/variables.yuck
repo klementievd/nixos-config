@@ -1,11 +1,10 @@
 (deflisten workspaces_listen "scripts/workspaces.py")
 (deflisten battery_listen "scripts/battery.sh")
 (deflisten bluetooth_info_listen "scripts/bluetooth.sh")
-
 (deflisten network_info_listen
   :initial "󰈂"
-  :interval "3s"
   "scripts/network_info.sh")
+
 (defpoll volume_info_listen
   :interval "5ms"
   "scripts/volume.sh")
