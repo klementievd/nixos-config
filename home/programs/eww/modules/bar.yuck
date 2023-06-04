@@ -42,6 +42,19 @@
     :class "battery-percentage"
     :text "${battery_listen.percentage}%")))
 
+(defwidget network_info []
+  (box
+   :class "network-info"
+   :orientation "v"
+   :valign "end"
+   :space-evenly false
+   (label
+    :class "network-icon"
+    :text {network_info_listen.icon})
+   (label
+    :class "network-name"
+    :text {network_info_listen.name})))
+
 (defwidget top_layout_1 []
   (box
    :class "top_layout_1"
@@ -62,6 +75,7 @@
    :orientation "v"
    :valign "end"
    :space-evenly false
+   (network_info)
    (battery)
    (bar_separator)
    (date)))
