@@ -50,10 +50,17 @@
    :space-evenly false
    (label
     :class "network-icon"
-    :text {network_info_listen.icon})
+    :text {network_info_listen.icon})))
+
+(defwidget bluetooth_info []
+  (box
+   :class "bluetooth-info"
+   :orientation "v"
+   :valign "end"
+   :space-evenly false
    (label
-    :class "network-name"
-    :text {network_info_listen.name})))
+    :class "bluetooth-icon"
+    :text {bluetooth_info_listen.icon})))
 
 (defwidget top_layout_1 []
   (box
@@ -75,7 +82,13 @@
    :orientation "v"
    :valign "end"
    :space-evenly false
-   (network_info)
+   (eventbox
+    :class "sys-menu"
+    :orientation "v"
+    :valign "end"
+    :space-evenly false
+    (network_info)
+    (bluetooth_info))
    (battery)
    (bar_separator)
    (date)))

@@ -37,3 +37,14 @@ $fg: orange;
 .battery-icon {
     font-size: 18px;
 }
+
+.sys-menu {
+    border-top: 2px solid $fg;
+    border-bottom: 2px solid $fg;
+    border-radius: 13px;
+}
+
+.network-icon {
+    font-size: 18px;
+    margin-left: -6px;
+}
