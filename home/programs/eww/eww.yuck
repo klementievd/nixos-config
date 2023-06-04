@@ -16,11 +16,11 @@
 (defwindow bar_1
   :monitor 0
   :geometry (geometry
-             :x "8px"
+             :x "0%"
              :y "0%"
              :width "50px"
-             :height "98%"
-             :anchor "center right")
+             :height "100%"
+             :anchor "center left")
   :stacking "fg"
   :exclusive true
   (bar_1_layout))
