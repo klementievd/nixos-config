@@ -17,4 +17,4 @@
   :interval "2s"
   "date +\"%y\"")
 
-(defvar default_bar_separator_1 "╾╼╾╼")
+(defvar default_bar_separator "╾╼╾╼")

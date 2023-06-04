@@ -1,8 +1,8 @@
 ;; Basic widgets
-(defwidget bar_separator_1 []
+(defwidget bar_separator []
   (label
-   :class "bar_separator_1"
-   :text "${default_bar_separator_1}"))
+   :class "bar_separator"
+   :text "${default_bar_separator}"))
 
 ;; Widgets for my bars
 
@@ -40,7 +40,7 @@
     :text {battery_listen.icon})
    (label
     :class "battery-percentage"
-    :text {battery_listen.percentage})))
+    :text "${battery_listen.percentage}%")))
 
 (defwidget top_layout_1 []
   (box
@@ -62,5 +62,6 @@
    :orientation "v"
    :valign "end"
    :space-evenly false
-   (bar_separator_1)
+   (battery)
+   (bar_separator)
    (date)))
