@@ -1,4 +1,4 @@
 ;; Widgets for my bars
 
 (defwidget workspaces []
-  )
+  (literal :content {workspaces_listen}))

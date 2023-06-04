@@ -2,10 +2,13 @@
 ; "bar_1" - Main bar for main monitor
 ;=====================================
 
+(include "modules/variables.yuck")
+(include "modules/bar.yuck")
+
 (defwidget bar_1_layout []
   (box
    :class "bar_1"
-   "TODO"))
+   (workspaces)))
 
 (defwindow bar_1
   :monitor 0
