@@ -14,6 +14,8 @@
       noto-fonts-emoji
       roboto
 
+      inputs.self.packages.${pkgs.hostPlatform.system}.silkscreen
+
       # nerdfonts
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     ];
