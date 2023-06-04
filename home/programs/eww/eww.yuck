@@ -2,13 +2,16 @@
 ; "bar_1" - Main bar for main monitor
 ;=====================================
 
-(include "modules/variables.yuck")
-(include "modules/bar.yuck")
+(include "./modules/variables.yuck")
+(include "./modules/bar.yuck")
 
 (defwidget bar_1_layout []
   (box
    :class "bar_1"
-   (workspaces)))
+   :orientation "v"
+   (top_layout_1)
+   (center_layout_1)
+   (bottom_layout_1)))
 
 (defwindow bar_1
   :monitor 0
@@ -16,7 +19,7 @@
              :x "8px"
              :y "0%"
              :width "50px"
-             :height "98%"
+             :height "99%"
              :anchor "center right")
   :stacking "fg"
   :exclusive true

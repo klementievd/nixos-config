@@ -1,5 +1,5 @@
-$bg = white;
-$fg = orange;
+$bg: white;
+$fg: orange;
 
 * {
     all: unset;
@@ -9,11 +9,20 @@ $fg = orange;
     background: $bg;
     color: $fg;
     font-size: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
-.workspaces {}
+.workspaces {
+    margin-top: 10px;
+    font-size: 18px;
+}
 
-.workspace_buttons {
+.workspace-button {
+    margin-top: 3px;
+}
+
+.time {
     font-size: 20px;
+    font-weight: bold;
+    font-family: 'Silkscreen';
 }

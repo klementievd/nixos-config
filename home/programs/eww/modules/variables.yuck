@@ -1,1 +1,7 @@
 (deflisten workspaces_listen "scripts/workspaces.py")
+(defpoll hour_listen
+  :interval "2s"
+  "date +\"%H\"")
+(defpoll minute_listen
+  :interval "2s"
+  "date +\"%M\"")

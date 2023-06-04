@@ -1,17 +1,12 @@
-{ lib, fetchzip }:
+{ lib, pkgs, fetchzip }:
 
 let
 in fetchzip {
-  name = "silkscript";
+  name = "silkscreen";
 
-  url = "https://www.fontsquirrel.com/fonts/download/Silkscreen";
+  url = "https://media.fontsgeek.com/download/zip/s/i/silkscreen-regular_0JTIE.zip";
 
-  postFetch = ''
-    mkdir -p $out/share/fonts/opentype
-    unzip -j $downloadedFile \*.otf -d $out/share/fonts/opentype
-  '';
-
-  sha256 = "sha256-8p15thg3xyvCA/8dH2jGQoc54nzESFDyv5m47FgWrSI=";
+  sha256 = "sha256-KpKC+SGwf/TuQe3gCzTw7UE7rSHVosW5Fru9ehvs5Lw=";
 
   meta = with lib; {
     homepage = "https://rsms.me/inter/";

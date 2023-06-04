@@ -12,8 +12,8 @@ def update_workspace(active_workspace):
     icons_index[active_workspace - 1] = icons_index[active_workspace - 1] + 5
     workspace_buttons = ""
     for i in range(5):
-        workspace_buttons += f"(button :class \"workspace-buttons\" :onclick \"\" {icons[icons_index[i]]})"
-    prompt = f"(box :valign \"top\" :class \"workspaces\" {workspace_buttons} )"
+        workspace_buttons += f"(label :text \"{icons[icons_index[i]]}\")"
+    prompt = f"(box :orientation \"v\" {workspace_buttons} )"
 
     subprocess.run(f"echo '{prompt}'",
                    shell=True)

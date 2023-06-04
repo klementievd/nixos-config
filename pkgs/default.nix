@@ -5,7 +5,7 @@
 
   perSystem = {pkgs, ...}: {
     packages = {
-      silkscreen = pkgs.callPackages ./silkscreen {};
+      silkscreen = pkgs.callPackage ./silkscreen {};
     };
   };
 }

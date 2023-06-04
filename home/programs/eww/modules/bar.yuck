@@ -1,4 +1,39 @@
 ;; Widgets for my bars
 
 (defwidget workspaces []
-  (literal :content {workspaces_listen}))
+  (literal
+   :class "workspaces"
+   :orientation "v"
+   :valign "start"
+   :content {workspaces_listen}))
+
+(defwidget time []
+  (box
+   :class "time"
+   :orientation "v"
+   :valign "center"
+   (literal
+    :content {hour_listen})
+   (literal
+    :content {minute_listen})))
+
+(defwidget top_layout_1 []
+  (box
+   :class "top_layout_1"
+   :orientation "v"
+   :valign "start"
+   (workspaces)))
+
+(defwidget center_layout_1 []
+  (box
+   :class "center_layout_1"
+   :orientation "v"
+   :valign "center"
+   (time)))
+
+(defwidget bottom_layout_1 []
+  (box
+   :class "center_layout_1"
+   :orientation "v"
+   :valign "end"
+   "TODO"))
