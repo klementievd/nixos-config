@@ -12,6 +12,7 @@
         ./hosts
         ./modules
         ./lib
+        ./pkgs
         {config._module.args._inputs = inputs // {inherit (inputs) self;};}
       ];
       
