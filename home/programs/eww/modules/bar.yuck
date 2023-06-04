@@ -97,7 +97,9 @@
    :space-evenly false
    (network_info)
    (bluetooth_info)
+   (bar_separator)
    (volume_info)
+   (bar_separator)
    (battery)
    (bar_separator)
    (date)))
