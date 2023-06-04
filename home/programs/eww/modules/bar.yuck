@@ -1,0 +1,4 @@
+;; Widgets for my bars
+
+(defwidget workspaces []
+  )

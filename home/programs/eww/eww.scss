@@ -1,8 +1,19 @@
+$bg = white;
+$fg = orange;
+
 * {
     all: unset;
 }
 
 .bar_1 {
-    background: darkblue;
+    background: $bg;
+    color: $fg;
+    font-size: 15px;
     border-radius: 10px;
+}
+
+.workspaces {}
+
+.workspace_buttons {
+    font-size: 20px;
 }
