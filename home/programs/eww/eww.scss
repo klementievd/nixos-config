@@ -20,7 +20,6 @@ $separator-size: 20px;
 
 .workspaces {
     margin-top: 10px;
-    font-size: $icon-size;
 }
 
 .workspace-button {
@@ -30,7 +29,6 @@ $separator-size: 20px;
 .time,
 .date {
     font-size: $datetime-size;
-    font-family: 'Silkscreen';
 }
 
 .date {
@@ -39,18 +37,27 @@ $separator-size: 20px;
 
 .battery-icon {
     margin-top: 13px;
-    font-size: $icon-size;
 }
 
 .network-icon {
-    font-size: $icon-size;
     margin-left: -6px;
 }
 
-.bluetooth-icon {
+.workspaces,
+.battery-icon,
+.network-icon,
+.bluetooth-icon,
+.volume-icon {
     font-size: $icon-size;
 }
 
 .volume-icon {
-    font-size: $icon-size;
+    margin-top: 3px;
+}
+
+.time,
+.date,
+.battery-percentage,
+.volume-percent {
+    font-family: 'Silkscreen';
 }
