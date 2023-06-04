@@ -1,8 +1,0 @@
-[bar-pinned-apps]
-firefox = { icon = "", cmd = "firefox &" }
-discord = { icon = "󰙯", cmd = "discord &" }
-telegram-desktop = { icon = "", cmd = "telegram-desktop &" }
-nautilus = { icon = "", cmd = "nautilus &"  }
-chromium = { icon = "", cmd = "chromium &" }
-emacsclient = { icon = "", cmd = "emacsclient -c &" }
-settings = { icon = "", cmd = "XDG_CURRENT_DESKTOP=GNOME gnome-control-center &" }

@@ -1,41 +1,20 @@
-(include "modules/bar_layout.yuck")
-(include "modules/menu_layout.yuck")
+;=====================================
+; "bar_1" - Main bar for main monitor
+;=====================================
 
-(defwidget calendar-win []
-  (eventbox
-    :class "calendar-win text"
-    :onhover "eww update calendar_hover=true"
-    :onhoverlost "[ ${date_reveal} = false ] && eww update calendar_hover=false; eww close calendar"
-    (calendar)))
+(defwidget bar_1_layout []
+  (box
+   :class "bar_1"
+   "TODO"))
 
-(defwindow calendar
+(defwindow bar_1
   :monitor 0
   :geometry (geometry
-    :x "0%"
-    :y "0%"
-  	:anchor "bottom right"
-    :width "0px"
-    :height "0px")
-  (calendar-win))
-
-(defwindow bar
-  :monitor 0
-  :geometry (geometry :x "0%"
-                      :y "0px"
-                      :width "100%"
-                      :height "50px"
-                      :anchor "bottom center")
+             :x "0%"
+             :y "15px"
+             :width "40px"
+             :height "95%"
+             :anchor "top right")
   :stacking "fg"
   :exclusive true
-  (bar_layout))
-
-(defwindow menu
-  :monitor 0
-  :geometry (geometry :x "40%"
-                      :y "30%"
-                      :width "40%"
-                      :height "50%"
-                      :anchor "center center")
-  :stacking "fg"
-  :focusable true
-  (menu_layout))
+  (bar_1_layout))
