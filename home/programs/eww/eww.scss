@@ -1,6 +1,10 @@
 $bg: black;
 $fg: orange;
 
+$icon-size: 18px;
+$datetime-size: 25px;
+$separator-size: 20px;
+
 * {
     all: unset;
 }
@@ -8,16 +12,15 @@ $fg: orange;
 .bar_1 {
     background: $bg;
     color: $fg;
-    font-size: 15px;
 }
 
 .bar_separator {
-    font-size: 20px;
+    font-size: $separator-size;
 }
 
 .workspaces {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: $icon-size;
 }
 
 .workspace-button {
@@ -26,7 +29,7 @@ $fg: orange;
 
 .time,
 .date {
-    font-size: 25px;
+    font-size: $datetime-size;
     font-family: 'Silkscreen';
 }
 
@@ -35,16 +38,19 @@ $fg: orange;
 }
 
 .battery-icon {
-    font-size: 18px;
-}
-
-.sys-menu {
-    border-top: 2px solid $fg;
-    border-bottom: 2px solid $fg;
-    border-radius: 13px;
+    margin-top: 13px;
+    font-size: $icon-size;
 }
 
 .network-icon {
-    font-size: 18px;
+    font-size: $icon-size;
     margin-left: -6px;
+}
+
+.bluetooth-icon {
+    font-size: $icon-size;
+}
+
+.volume-icon {
+    font-size: $icon-size;
 }

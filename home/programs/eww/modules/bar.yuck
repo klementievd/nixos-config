@@ -62,6 +62,19 @@
     :class "bluetooth-icon"
     :text {bluetooth_info_listen.icon})))
 
+(defwidget volume_info []
+  (box
+   :class "volume-info"
+   :orientation "v"
+   :valign "end"
+   :space-evenly false
+   (label
+    :class "volume-icon"
+    :text {volume_info_listen.icon})
+   (label
+    :class "volume-percent"
+    :text "${volume_info_listen.percent}%")))
+
 (defwidget top_layout_1 []
   (box
    :class "top_layout_1"
@@ -82,13 +95,9 @@
    :orientation "v"
    :valign "end"
    :space-evenly false
-   (eventbox
-    :class "sys-menu"
-    :orientation "v"
-    :valign "end"
-    :space-evenly false
-    (network_info)
-    (bluetooth_info))
+   (network_info)
+   (bluetooth_info)
+   (volume_info)
    (battery)
    (bar_separator)
    (date)))
