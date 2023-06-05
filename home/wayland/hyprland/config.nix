@@ -110,6 +110,9 @@ in {
     layerrule = blur, ^(gtk-layer-shell|anyrun)$
     layerrule = ignorezero, ^(gtk-layer-shell|anyrun)$
 
+    windowrule = noshadow, ^(${default.launcher})$
+    windowrule = noblur, ^(${default.launcher})$
+
     # mouse movements
     bindm = $mod, mouse:272, movewindow
     bindm = $mod, mouse:273, resizewindow
@@ -132,14 +135,14 @@ in {
     bind = $mod, M, exec, hyprctl keyword $kw $(($(hyprctl getoption $kw -j | jaq -r '.int') ^ 1))
     # utility
     # launcher
-    bindr = $mod, SUPER_L, exec, pkill ${default.launcher} || rofi -theme $XDG_CONFIG_HOME/rofi/launcher.rasi
+    bindr = $mod, SUPER_L, exec, pkill ${default.launcher} || rofi -show drun -theme ~/.config/rofi/launcher.rasi
     bind = $mod, Space, exec, # This is needed for Super(Win)+Space keyboard layout switching
     # terminal
     bind = $mod, Return, exec, ${default.terminal.name}
     # doom emacs
     bind = $mod, E, exec, emacsclient -c
     # logout menu
-    bind = $mod, Escape, exec, pkill ${default.launcher} || $XDG_CONFIG_HOME/rofi/powermenu.sh
+    bind = $mod, Escape, exec, pkill ${default.launcher} || ~/.config/rofi/powermenu.sh
     # lock screen
     bind = $mod, L, exec, loginctl lock-session
     # select area to perform OCR on

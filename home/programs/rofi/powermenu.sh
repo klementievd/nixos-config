@@ -11,7 +11,7 @@
 ## style-6   style-7   style-8   style-9   style-10
 
 # Current Theme
-dir="$XDG_CONFIG_HOME/rofi"
+dir="~/.config/rofi"
 theme='powermenu'
 
 # CMDs
@@ -19,13 +19,13 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+shutdown=''
+reboot=''
+lock='󰌾'
+suspend='󰒲'
+logout='󰍃'
+yes=''
+no=''
 
 # Rofi CMD
 rofi_cmd() {
