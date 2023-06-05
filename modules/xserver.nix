@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    elisa
+    khelpcenter
+    konsole
+    oxygen
+  ];
   services = {
     xserver = {
       enable = true;
@@ -17,12 +23,6 @@
       };
       desktopManager.plasma5 = {
         enable = true;                            # Desktop Manager
-        excludePackages = with pkgs.libsForQt5; [
-          elisa
-          khelpcenter
-          konsole
-          oxygen
-        ];
       };
     };
   };

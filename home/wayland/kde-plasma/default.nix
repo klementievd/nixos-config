@@ -1,15 +1,14 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs = {
-    kdeconnect = {                                # For GSConnect
+  services = {
+    kdeconnect = {
       enable = true;
-      package = pkgs.gnomeExtensions.gsconnect;
     };
   };
 
   home = {
-    packages = with pkgs.libsForQt5; [                 # Packages installed
+    packages = with pkgs.libsForQt5; [
       packagekit-qt
       bismuth
     ];

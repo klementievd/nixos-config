@@ -7,9 +7,7 @@
     ./cinny.nix
     ./media.nix
     ./git.nix
-    ./gtk.nix
     ./packages.nix
-    ./qt.nix
     ./xdg.nix
     ./zathura.nix
     ./dconf.nix
