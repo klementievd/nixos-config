@@ -7,9 +7,6 @@
     unzip
     unrar
 
-    # for flipper zero
-    qFlipper
-
     # messaging
     tdesktop
     discord
@@ -27,9 +24,6 @@
 
     # office programs
     okular # So cool PDF Viewer
-
-    # disks/file management
-    gnome.nautilus
 
     # other
     neofetch
