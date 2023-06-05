@@ -8,7 +8,6 @@
 
     delta = {
       enable = true;
-      options.map-styles = "bold purple => syntax ${default.xcolors.mauve}, bold cyan => syntax ${default.xcolors.blue}";
     };
 
     extraConfig = {

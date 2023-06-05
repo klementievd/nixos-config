@@ -32,6 +32,7 @@
     gnome.nautilus
 
     # other
+    neofetch
     python39
     ripgrep
     jc

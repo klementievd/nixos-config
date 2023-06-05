@@ -1,4 +1,5 @@
 {
+  default,
   config,
   pkgs,
   lib,
@@ -47,6 +48,8 @@
   '';
 
   cfg = config.programs.eww-hyprland;
+
+  inherit (default) xcolors;
 in {
   options.programs.eww-hyprland = {
     enable = lib.mkEnableOption "eww Hyprland config";
@@ -98,6 +101,11 @@ in {
         then reload_script.outPath
         else "";
     };
+
+    xdg.configFile."eww/styles/colors.scss".text = ''
+      $bg: ${xcolors.bg};
+      $fg: ${xcolors.fg};
+    '';
 
     systemd.user.services.eww = {
       Unit = {

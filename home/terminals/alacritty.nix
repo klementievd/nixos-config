@@ -29,22 +29,9 @@ in {
       draw_bold_text_with_bright_colors = true;
       colors = rec {
         primary = {
-          background = xcolors.crust;
+          background = xcolors.bg;
           foreground = xcolors.fg;
         };
-        normal = {
-          inherit (xcolors) red green yellow blue;
-          black = xcolors.mantle;
-          magenta = xcolors.mauve;
-          cyan = xcolors.sky;
-          white = xcolors.text;
-        };
-        bright =
-          normal
-          // {
-            black = xcolors.base;
-            white = xcolors.rosewater;
-          };
       };
       window.opacity = opacity;
     };
