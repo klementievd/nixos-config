@@ -132,16 +132,14 @@ in {
     bind = $mod, M, exec, hyprctl keyword $kw $(($(hyprctl getoption $kw -j | jaq -r '.int') ^ 1))
     # utility
     # launcher
-    bindr = $mod, SUPER_L, exec, eww open --toggle menu
+    bindr = $mod, SUPER_L, exec, pkill ${default.launcher} || rofi -theme $XDG_CONFIG_HOME/rofi/launcher.rasi
     bind = $mod, Space, exec, # This is needed for Super(Win)+Space keyboard layout switching
     # terminal
     bind = $mod, Return, exec, ${default.terminal.name}
     # doom emacs
     bind = $mod, E, exec, emacsclient -c
-    # window switcher
-    bind = ALT, Tab, exec, pkill ${default.launcher} || $HOME/.config/rofi/rofi.sh window
     # logout menu
-    bind = $mod, Escape, exec, pkill ${default.launcher} || $HOME/.config/rofi/rofi.sh outopts
+    bind = $mod, Escape, exec, pkill ${default.launcher} || $XDG_CONFIG_HOME/rofi/powermenu.sh
     # lock screen
     bind = $mod, L, exec, loginctl lock-session
     # select area to perform OCR on
