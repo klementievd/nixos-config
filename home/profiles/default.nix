@@ -11,7 +11,6 @@ let
     "klementievd@laptop" =
       [
         ./laptop
-        inputs.hyprland.homeManagerModules.default
         inputs.doom-emacs.hmModule
       ]
       ++ sharedModules;
@@ -31,7 +30,5 @@ in
         inherit pkgs;
       };
     });
-    
-    homeManagerModules.eww-hyprland = import ../programs/eww;
   };
 }

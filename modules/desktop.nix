@@ -103,10 +103,6 @@
 
     # battery info & stuff
     upower.enable = true;
-
-    # needed for GNOME services outside of GNOME Desktop
-    dbus.packages = [pkgs.gcr];
-    udev.packages = with pkgs; [gnome.gnome-settings-daemon];
   };
 
   security = {
@@ -119,6 +115,6 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [pkgs.libsForQt5.xdg-desktop-portal-kde];
   };
 }

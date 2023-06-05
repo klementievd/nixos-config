@@ -9,7 +9,6 @@
         [
           ./laptop
           ../modules/xserver.nix
-          ../modules/greetd.nix
           ../modules/desktop.nix
           ../modules/gamemode.nix
           {home-manager.users.klementievd.imports = homeImports."klementievd@laptop";}

@@ -4,7 +4,6 @@
   imports = [
     ../shell/nix.nix
     ../terminals/alacritty.nix
-    ./rofi.nix
     ./cinny.nix
     ./media.nix
     ./git.nix

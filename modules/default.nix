@@ -26,7 +26,6 @@ in
         ];
         
         desktopModules = with inputs; [
-          hyprland.nixosModules.default
           nix-gaming.nixosModules.default
         ];
       };
@@ -37,7 +36,6 @@ in
     core = import ./core.nix;
     desktop = import ./desktop.nix;
     gamemode = import ./gamemode.nix;
-    greetd = import ./greetd.nix;
     network = import ./network.nix;
     nix = import ./nix.nix;
     xserver = import ./xserver;
