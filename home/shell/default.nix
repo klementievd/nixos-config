@@ -23,7 +23,9 @@ in
     # enable scrolling in git diff
     DELTA_PAGER = "less -R";
 
-    EDITOR = "emacsclient -c";
+    # Defined in home/editors/doom-emacs/default.nix:
+    # `services.emacs.defaultEditor = true`
+    #EDITOR = "emacsclient -c";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
   };
 }

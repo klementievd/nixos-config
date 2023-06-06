@@ -1,7 +1,11 @@
 { inputs, ... }:
 
 {
-  services.emacs.enable = true;
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+    startWithUserSession = "graphical";
+  };
 
   programs.doom-emacs = {
     enable = true;
